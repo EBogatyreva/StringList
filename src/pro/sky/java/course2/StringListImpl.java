@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class StringListImpl implements StringListInterface {
     private final int INIT_SIZE = 16;//изначальная max емкость
     private final int CUT_RATE = 4;
-    private Object[] array = new Object[INIT_SIZE];
+    private String[] array = new String[INIT_SIZE];
     private int pointer = 0;
 
     @Override
@@ -113,7 +113,7 @@ public class StringListImpl implements StringListInterface {
     public void resize(int newLength) {
         Object[] newArray = new Object[newLength];
         System.arraycopy(array, 0, newArray, 0, pointer);//old massive copy to new
-        array = newArray;
+        array = (String[]) newArray;
     }
 
     //для себя
@@ -192,7 +192,7 @@ public class StringListImpl implements StringListInterface {
     // и вернуть его.
     @Override
     public String[] toArray() {
-        return (String[]) Arrays.copyOf(array, pointer);
+        return Arrays.copyOf(array, pointer);
     }
 
 

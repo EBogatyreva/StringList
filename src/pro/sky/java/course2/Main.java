@@ -1,6 +1,7 @@
 package pro.sky.java.course2;
 
 import java.util.ArrayList;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -31,11 +32,15 @@ public class Main {
         System.out.println(stringList.size());
         stringList.printAll();
 
-        System.out.println(stringList.toArray());
-
         System.out.println(stringList.isEmpty());
         System.out.println(stringList.lastIndexOf("100"));
         System.out.println(stringList.indexOf("0"));
-        System.out.println(stringList.remove("5"));
+
+        stringList.toArray();
+        for (int i = 0; i < stringList.size(); i++) {
+            System.out.print(stringList.get(i) + " ");
+        }
+        System.out.println(" ");
+        System.out.println(stringList.remove("5"));//выходит за границу
     }
 }
